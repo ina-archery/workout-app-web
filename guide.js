@@ -12,7 +12,7 @@ const GT = {
 };
 const gt = (k, o) => { let v = GT[L()][k]; if (o && typeof v === 'string') for (const x in o) v = v.replace('{' + x + '}', o[x]); return v; };
 const PROF = { def: [.15, .35, .15, .35], hold5: [.3, .1, .5, .1] };
-const GSPEC = { plank: { kind: 'sec' }, sumohold: { kind: 'sec' }, backflat: { T: 10000, prof: PROF.hold5 } };
+const GSPEC = { plank: { kind: 'sec' }, sumohold: { kind: 'sec' }, sleg: { kind: 'sec' }, backflat: { T: 10000, prof: PROF.hold5 } };
 const REST_POSE = P(STH, STS, STF, [104, 76], 1, -1), CHEER_POSE = P(STH, STS, STF, [103, -8], 1, -1);
 const tempoMs = () => ({ slow: 4500, normal: 3200, fast: 2200 })[S.tempo || 'normal'];
 let G = null, gRaf = 0, gLock = null;

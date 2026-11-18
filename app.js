@@ -2,7 +2,7 @@
 // ===== 種目データ: [id, 名前, 部位, 器具, 基本種目か, セット, 回数, 休憩秒] =====
 const PARTS = ['胸', '背中', '脚', '肩', '腕', '腹'];
 const EQUIPS = ['body', 'band', 'db', 'gym'];
-const ARCH = new Set(['supermanb','dbrow','pullup','latpull','cablerow','bandpull','bandrow','bandrot','reara','sidera','dbohp','facepull','dbext','pushdown','hammer','plank','birddog','legraise','pushup','backflat','sumohold','proneY','shrugdown']);
+const ARCH = new Set(['supermanb','dbrow','pullup','latpull','cablerow','bandpull','bandrow','bandrot','reara','sidera','dbohp','facepull','dbext','pushdown','hammer','plank','birddog','legraise','pushup','backflat','sumohold','sleg','proneY','shrugdown']);
 const ARCHW = { '背中': 4, '肩': 3, '腹': 2, '腕': 1, '胸': 1, '脚': 1 };
 const EX = [
   ['pushup', 'プッシュアップ', '胸', 'body', 1, 3, 12, 60],
@@ -47,6 +47,7 @@ const EX = [
   ['shrugdown', '肩の上げ下げ（肩を下げる練習）', '肩', 'body', 0, 3, 10, 45],
   ['backflat', '背中ペタ腹筋キープ（5秒）', '腹', 'body', 1, 3, 5, 45],
   ['sumohold', '四股立ちキープ（秒）', '脚', 'body', 0, 3, 30, 60],
+  ['sleg', '片足立ちキープ（秒）', '脚', 'body', 0, 3, 30, 45],
   ['crunch', 'クランチ', '腹', 'body', 1, 3, 20, 45],
   ['plank', 'プランク（秒）', '腹', 'body', 0, 3, 40, 45],
   ['legraise', 'レッグレイズ', '腹', 'body', 0, 3, 15, 45],
@@ -56,7 +57,7 @@ const EX = [
 const BYID = Object.fromEntries(EX.map(e => [e[0], e]));
 
 // ===== 言語 (ja / en) =====
-const EXEN = {pushup:'Push-up',incpush:'Incline push-up',dbpress:'Dumbbell bench press',dbfly:'Dumbbell fly',bench:'Bench press',pecdeck:'Pec deck',pullup:'Pull-up',supermanb:'Superman',dbrow:'One-arm dumbbell row',dbpullover:'Dumbbell pullover',deadlift:'Deadlift',latpull:'Lat pulldown',cablerow:'Seated cable row',squat:'Squat',lunge:'Lunge',calfb:'Calf raise',gobsquat:'Goblet squat',dbrdl:'Dumbbell Romanian deadlift',bbsquat:'Barbell squat',legpress:'Leg press',legcurl:'Leg curl',pike:'Pike push-up',dbohp:'Dumbbell shoulder press',sidera:'Lateral raise',reara:'Rear delt raise',ohp:'Barbell overhead press',facepull:'Face pull',dips:'Chair dips',diamond:'Diamond push-up',dbcurl:'Dumbbell curl',dbext:'Overhead triceps extension',hammer:'Hammer curl',bbcurl:'Barbell curl',pushdown:'Triceps pushdown',crunch:'Crunch',plank:'Plank (sec)',legraise:'Leg raise',russian:'Russian twist',abwheel:'Ab wheel',bandpull:'Band pull-apart',bandrow:'Band row',bandrot:'Band external rotation',birddog:'Bird dog',proneY:'Prone Y raise',shrugdown:'Shoulder shrug & drop',backflat:'Flat-back ab hold (5 s)',sumohold:'Sumo squat hold (sec)'};
+const EXEN = {pushup:'Push-up',incpush:'Incline push-up',dbpress:'Dumbbell bench press',dbfly:'Dumbbell fly',bench:'Bench press',pecdeck:'Pec deck',pullup:'Pull-up',supermanb:'Superman',dbrow:'One-arm dumbbell row',dbpullover:'Dumbbell pullover',deadlift:'Deadlift',latpull:'Lat pulldown',cablerow:'Seated cable row',squat:'Squat',lunge:'Lunge',calfb:'Calf raise',gobsquat:'Goblet squat',dbrdl:'Dumbbell Romanian deadlift',bbsquat:'Barbell squat',legpress:'Leg press',legcurl:'Leg curl',pike:'Pike push-up',dbohp:'Dumbbell shoulder press',sidera:'Lateral raise',reara:'Rear delt raise',ohp:'Barbell overhead press',facepull:'Face pull',dips:'Chair dips',diamond:'Diamond push-up',dbcurl:'Dumbbell curl',dbext:'Overhead triceps extension',hammer:'Hammer curl',bbcurl:'Barbell curl',pushdown:'Triceps pushdown',crunch:'Crunch',plank:'Plank (sec)',legraise:'Leg raise',russian:'Russian twist',abwheel:'Ab wheel',bandpull:'Band pull-apart',bandrow:'Band row',bandrot:'Band external rotation',birddog:'Bird dog',proneY:'Prone Y raise',shrugdown:'Shoulder shrug & drop',backflat:'Flat-back ab hold (5 s)',sumohold:'Sumo squat hold (sec)',sleg:'Single-leg stand (sec)'};
 const PARTEN = {'胸':'Chest','背中':'Back','脚':'Legs','肩':'Shoulders','腕':'Arms','腹':'Abs'};
 const I = {
 ja:{title:'筋トレメニュー',nMenu:'メニュー',nTrain:'記録',nHist:'履歴',langBtn:'EN',

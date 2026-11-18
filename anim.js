@@ -132,11 +132,13 @@ TXT.birddog = ['四つん這いから、片腕と反対側の脚を同時に水�
 ANIM.proneY = { a: P([100, 130], [144, 130], [40, 130], [188, 130], 1, 1), b: P([100, 130], [144, 130], [40, 130], [182, 108], 1, 1) };
 ANIM.shrugdown = { eq: 'db', a: { fv: 1, a: 84, c: 88, sy: 8 }, b: { fv: 1, a: 84, c: 88, sy: 0 } };
 ANIM.backflat = { a: P([80, 132], [124, 132], [56, 134], [100, 134], -1, 1), b: P([80, 132], [120, 122], [56, 134], [100, 134], -1, 1) };
+ANIM.sleg = { a: P(STH, STS, STF, [104, 74], 1, -1, { g: [112, 118], gb: 1 }), b: P(STH, STS, STF, [128, 36], 1, -1, { g: [112, 118], gb: 1 }) };
 ANIM.sumohold = { a: P(STH, STS, STF, [104, 74], 1, -1), b: P([78, 104], [104, 66], STF, [118, 84], 1, -1) };
 
 TXT.proneY = ['うつ伏せで両腕を頭の前にY字に伸ばし、親指を上に向けて腕を床から持ち上げ、止めてから下ろす。（横から見た図）', '脚は床につけたまま。肩をすくめず、肩甲骨を下げて背中の下の方で上げる。ペットボトルを持つと負荷が上がる。', 'Lie face down with arms extended in a Y overhead, thumbs up; lift your arms off the floor, pause, then lower. (Side view)', 'Legs stay down. Do not shrug; lift using the lower part of your back with shoulder blades down. Hold water bottles to add load.'];
 TXT.shrugdown = ['両腕を肩の高さで真横に伸ばし、少し猫背（背中を軽く丸める）になって、肩を耳に近づけるように持ち上げてから、ストンと下げる。両肩同時に。（正面から見た図）', 'そのままやると背筋で下げがち。アーチェリーで肩を下げるのに必要なのは腹筋なので、軽く丸めて腹筋を使う感覚で。慣れたらゴムを引いたままでも。', 'Hold both arms straight out to the sides at shoulder height with a slightly rounded (hunched) back; lift your shoulders toward your ears, then drop them down. Move both shoulders together. (Front view)', 'Done upright you tend to use your back muscles. In archery the shoulder is held down by the abs, so round slightly and feel your abs doing the work. Later try it while stretching a band.'];
 TXT.backflat = ['仰向けで膝を立て、背骨を床にへばりつかせるように、腰を床に押しつけて5秒キープ。頭だけを少し上げておへそをのぞくと腹筋が入りやすい。5秒休んで繰り返す。（回数欄は5秒キープの回数）', '腰の下にタオルを入れて、引き抜かれても抜けないように腹筋で押さえつける、と考えると感覚がわかりやすい。首に力を入れすぎない。', 'Lie on your back with knees bent and press your spine flat against the floor, holding 5 seconds. Lifting just your head to look at your navel helps engage the abs. Rest 5 seconds and repeat. (Reps = number of 5-second holds)', 'Put a towel under your lower back and imagine someone trying to pull it out — hold it down with your abs. Keep neck tension low.'];
+TXT.sleg = ['片足で立ち、反対の足を軽く浮かせて30秒キープ。左右とも行う（回数欄は秒数。慣れたら腕を真横に上げたり、ペットボトルを持つとさらに難しくなります）。', '足の裏全体で床を踏み、お尻を軽く締めて、体を傾けずに立つ。ぐらつくときは壁に指を添えてOK。', 'Stand on one leg with the other foot just off the floor and hold 30 seconds. Do both sides (the reps field is seconds). To make it harder, raise your arms out to the sides or hold a bottle.', 'Press your whole foot into the floor, lightly squeeze your glutes and do not lean. Touch a wall with a finger if you wobble.'];
 TXT.sumohold = ['足を肩幅より大きく開き、つま先を外に向けて腰を落とし（四股立ち）、お尻を後ろに突き出して背中を反らせた姿勢で30秒キープ。（実際は脚が左右に開きます）', '膝とつま先を同じ向きに。「お尻ツン・背中を反らす」姿勢を崩さずにキープ。きついときは浅めに。', 'Stand with feet wider than shoulders, toes turned out, sink into a wide squat (sumo stance), stick your hips back and keep your back arched. Hold 30 seconds. (In reality your legs spread out to the sides.)', 'Knees over toes. Hold the hips-back, arched-back position without letting it collapse. Go shallower if it is too hard.'];
 
 // アーチェリーでの狙い [日本語, English]
@@ -159,6 +161,7 @@ const ARN = {
   proneY: ['引き手側の下部僧帽筋は、熟練者ほどよく使うという研究があり、肩甲骨を安定させる要になります。', 'Research found skilled archers use the lower trapezius of the draw arm more; it is a key shoulder-blade stabiliser.'],
   shrugdown: ['押し手の肩が上がったり背中側へ逃げたりしないよう、肩を下げて保つ感覚を作ります。肩を下げるのは背筋ではなく腹筋、という感覚づくりです。', 'Builds the feel of keeping the bow-side shoulder down so it neither rises nor slips back — and that the abs, not the back muscles, are what hold it down.'],
   backflat: ['アーチェリーの立ち方の土台です。背中が反らない「お尻にえくぼ・腹筋で背骨をまっすぐ」の感覚を作ります。', 'The foundation of an archery stance: builds the feel of a flat spine with the abs engaged and no back arch.'],
+  sleg: ['弓を持ち上げても重心が両足の真ん中に残る感覚をつくります（記事では片足立ちで射つ練習も紹介）。', 'Builds the feel of keeping your weight centered while lifting the bow (the article even suggests shooting on one leg).'],
   sumohold: ['リリースで体がぶれないよう、足腰と体幹をまとめて締める力を養います（四股立ちで射つ練習の下地）。', 'Builds the leg and trunk tension that keeps your body from moving at release.'],
   plank: ['体幹が安定すると、射型が崩れにくくなります。', 'A stable core keeps your shooting form from breaking down.'],
   birddog: ['体幹と左右のバランスを鍛え、立ち姿勢の安定に効きます。', 'Trains core and left-right balance for a steadier stance.'],
